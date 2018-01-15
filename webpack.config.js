@@ -15,7 +15,7 @@ module.exports = {
 
   output: {
     path: BUILD_DIR,
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
   },
 
   module: {
