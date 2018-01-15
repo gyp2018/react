@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -42,6 +43,9 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
     }),
     new ExtractTextPlugin('[name].[chunkhash].bundle.css'),
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor', 'manifest'],
     }),
