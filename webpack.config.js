@@ -63,10 +63,10 @@ module.exports = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-
+  console.log('production')
   module.exports.output = {
     path: BUILD_DIR,
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
   },
 
   module.exports.plugins = (module.exports.plugins || []).concat([
