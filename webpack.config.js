@@ -44,8 +44,14 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
     }),
     new webpack.HashedModuleIdsPlugin(),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   names: ['vendor', 'manifest'],
+    // }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
+      name: 'vendor',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
     }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new UglifyJSPlugin({
