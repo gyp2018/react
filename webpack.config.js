@@ -43,7 +43,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
     }),
-    new webpack.HashedModuleIdsPlugin(),
     // new webpack.optimize.CommonsChunkPlugin({
     //   names: ['vendor', 'manifest'],
     // }),
