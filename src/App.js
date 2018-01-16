@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Hello from "./app/Hello";
-import World from "./app/World";
+// import World from "./app/World";
 
 import './App.css';
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="app">
         <Hello name="React" />
-        <World />
+        {/* <World /> */}
       </div>
     );
   }
