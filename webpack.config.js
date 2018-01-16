@@ -17,7 +17,7 @@ module.exports = {
 
   output: {
     path: BUILD_DIR,
-    filename: '[name].[chunkhash].bundle.js',
+    filename: '[name].[chunkhash].js',
   },
 
   module: {
@@ -45,9 +45,9 @@ module.exports = {
     }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor','manifest'],
+      names: ['vendor', 'manifest'],
     }),
-    new ExtractTextPlugin('[name].[chunkhash].bundle.css'),
+    new ExtractTextPlugin('[name].[chunkhash].css'),
     new UglifyJSPlugin({
       sourceMap: true
     }),
