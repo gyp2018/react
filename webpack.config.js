@@ -11,8 +11,8 @@ const BUILD_DIR = path.resolve(__dirname, 'build');
 module.exports = {
 
   entry: {
-    vendor: [SRC_DIR + '/vendor.js'],
     app:    [SRC_DIR + '/index.js'],
+    vendor: [SRC_DIR + '/vendor.js'],
   },
 
   output: {
@@ -39,17 +39,18 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(BUILD_DIR),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor','manifest'],
     }),
     new ExtractTextPlugin('[name].[chunkhash].bundle.css'),
     new UglifyJSPlugin({
       sourceMap: true
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'manifest'],
-    }),
-    new CleanWebpackPlugin(BUILD_DIR),
   ],
 
   devtool: '#eval-source-map',
