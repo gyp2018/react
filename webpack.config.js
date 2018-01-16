@@ -11,13 +11,13 @@ const BUILD_DIR = path.resolve(__dirname, 'build');
 module.exports = {
 
   entry: {
-    app:    [SRC_DIR + '/index.js'],
     vendor: [SRC_DIR + '/vendor.js'],
+    app:    [SRC_DIR + '/index.js'],
   },
 
   output: {
     path: BUILD_DIR,
-    filename: '[name].[chunkhash].js',
+    filename: '[name].js',
   },
 
   module: {
@@ -63,7 +63,11 @@ module.exports = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map';
+
+  module.exports.output = {
+    path: BUILD_DIR,
+    filename: '[name].[hash].js',
+  },
 
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -73,4 +77,6 @@ if (process.env.NODE_ENV === 'production') {
       sourceMap: true,
     }),
   ]);
+
+  module.exports.devtool = '#source-map';
 }
