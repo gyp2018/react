@@ -47,7 +47,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
     }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    new ExtractTextPlugin('[name].[contenthash].css'),
     new UglifyJSPlugin({
       sourceMap: true
     }),
