@@ -49,7 +49,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
     new UglifyJSPlugin({
-      sourceMap: true
+      sourceMap: true,
     }),
   ],
 
@@ -63,7 +63,6 @@ module.exports = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  console.log('production')
   module.exports.output = {
     path: BUILD_DIR,
     filename: '[name].[chunkhash].js',

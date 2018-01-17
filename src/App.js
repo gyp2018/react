@@ -1,6 +1,6 @@
-import React from 'react';
-import Hello from './app/Hello'
-import World from "./app/World"
+import React, { Component } from 'react';
+import Hello from './app/Hello';
+// import World from './app/World';
 
 import './App.css';
 

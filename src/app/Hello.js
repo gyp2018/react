@@ -1,15 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const Hello = ({ name }) => (
-  <div>
-    <h1>Hello, {name}!!!</h1>
-    <p>hi</p>
-  </div>
-);
+// type Props = {
+//   name: number
+// };
 
-Hello.propTypes = {
-  name: PropTypes.string.isRequired,
+const Hello = ({name}) => {
+  const greeting = 'hi hello';
+  return (
+    <div>
+        <h1   className="dfdf">Hello, {name + greeting}!!!</h1>
+      <p>hi</p>
+    </div>
+  );
 };
+
+// Hello.propTypes = {
+//   name: PropTypes.string.isRequired,
+// };
 
 export default Hello;

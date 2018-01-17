@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server ",
-    "build": "NODE_ENV=production webpack ",
-    "eslint": "eslint **/*.js"
+    "build": "NODE_ENV=production webpack",
+    "eslint": "eslint src/**/*.js"
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta.3",

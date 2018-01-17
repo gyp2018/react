@@ -7,7 +7,8 @@ module.exports = {
   "plugins": [
     "react",
     "jsx-a11y",
-    "import"
+    "import",
+    "flowtype",
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
